@@ -2,7 +2,7 @@
 title: MacでMicrosoft Enterprise SSOを使う
 tags: 
  - Mac
- - Entra ID
+ - EntraID
  - mdm
  - Jamf
 private: false
