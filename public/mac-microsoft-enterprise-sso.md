@@ -1,6 +1,10 @@
 ---
 title: MacでMicrosoft Enterprise SSOを使う
-tags: []
+tags: 
+ - Mac
+ - Entra ID
+ - mdm
+ - Jamf
 private: false
 updated_at: ''
 id: null
