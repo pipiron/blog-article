@@ -1,9 +1,12 @@
 ---
-title: 'MacでMicrosoft Enterprise SSOを使う'
-emoji: 😀
-type: tech
-topics: []
-published: false
+title: MacでMicrosoft Enterprise SSOを使う
+tags: []
+private: false
+updated_at: ''
+id: null
+organization_url_name: null
+slide: false
+ignorePublish: true
 ---
 ## MacでもEntra IDのSSOを実現させたい
 WindowsではWindows Hello for Businessによって、
@@ -12,7 +15,9 @@ Entra ID認証をシームレスにSSOすることができます。
 Macはまだ残念ながら完全に対応していない。
 が、ブラウザとWordやExcelなどのOfficeアプリであればSSOが利用できるようになっている。
 詳しくは以下参照。
+
 https://learn.microsoft.com/ja-jp/entra/identity-platform/apple-sso-plugin
+
 
 このプラグインを使うことで、少しばかりEntra IDのSSOができるようになる。
 というわけで手持ちのMacで試してみました。
@@ -23,7 +28,9 @@ MSのサイトにはIntuneとJamf Proのやり方が載っているが、
 MDMならなんでもOK。
 
 自分はJamf Nowを使ってみた。
+
 https://qiita.com/pipiron3/items/eee1130ff9440dfa8d2f
+
 
 MDMじゃなくても構成プロファイルをインストールしていたらいいかも。
 
@@ -40,7 +47,9 @@ Jamf Nowのカスタムプロファイルの項目を確認すると、
 Apple ConfiguratorではSSO設定ができなかったため、
 2のツールを使う。
 以下のURLからインストール。
+
 https://imazing.com/profile-editor
+
 
 Profile Editorを開いたら、
 GeneralのNameに任意のプロファイル名を入力する。
@@ -97,7 +106,9 @@ PCに保存する。
 ## ポータルサイトアプリをMacにインストール
 Microsoftポータルサイトアプリをインストールする。
 以下のURLをクリックしてインストーラーをDL。
+
 https://go.microsoft.com/fwlink/?linkid=853070
+
 
 インストーラーを実行して、指示に従ってインストールする。
 ![portal01.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/329638/29ab50b7-1e9c-8dad-a23f-be894cfa6b9f.png)
