@@ -1,10 +1,10 @@
 ---
 title: MacでMicrosoft Enterprise SSOを使う
 tags: 
- - Mac
- - EntraID
- - mdm
- - Jamf
+  - Mac
+  - mdm
+  - Jamf
+  - EntraID
 private: false
 updated_at: ''
 id: null
