@@ -3,7 +3,7 @@ title: MacでMicrosoft Enterprise SSOを使う
 emoji: 😀
 type: tech
 topics: []
-published: false
+published: true
 ---
 ## MacでもEntra IDのSSOを実現させたい
 WindowsではWindows Hello for Businessによって、

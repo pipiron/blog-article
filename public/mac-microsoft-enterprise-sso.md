@@ -1,13 +1,13 @@
 ---
 title: MacでMicrosoft Enterprise SSOを使う
-tags: 
+tags:
   - Mac
   - mdm
   - Jamf
   - EntraID
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-05-04T03:10:05+09:00'
+id: 64b2e7d8d66c4e80612e
 organization_url_name: null
 slide: false
 ignorePublish: false
