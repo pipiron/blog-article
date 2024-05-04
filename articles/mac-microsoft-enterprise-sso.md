@@ -2,7 +2,7 @@
 title: MacでMicrosoft Enterprise SSOを使う
 emoji: 😀
 type: tech
-topics: []
+topics: ["Mac","MDM","Jamf","EntraID"]
 published: true
 ---
 ## MacでもEntra IDのSSOを実現させたい
