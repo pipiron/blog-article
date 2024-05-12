@@ -24,7 +24,7 @@ WorkspacesでもMFAを利用可能するのでは、と思い
 設定することにしてみた。  
 
 ## 構成図
-![workspaces](../images/workspaces-saml2/workspaces-saml2.png)
+![workspaces](/images/workspaces-saml2/workspaces-saml2.png)
 
 同じアカウントに作ったら面白みがないので、  
 ADサーバは別アカウントに作る。  
