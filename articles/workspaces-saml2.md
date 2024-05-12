@@ -6,7 +6,7 @@ topics:
 - AWS
 - WorkSpaces
 - EntraID
-published: false
+published: true
 ---
 ## WorkspacesでMFAの設定は面倒
 代表的なDaaSであるAWSのWorkspacesとAzureのAVD。
