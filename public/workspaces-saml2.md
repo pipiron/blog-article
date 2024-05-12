@@ -9,7 +9,7 @@ updated_at: ''
 id: null
 organization_url_name: null
 slide: false
-ignorePublish: true
+ignorePublish: false
 ---
 ## WorkspacesでMFAの設定は面倒
 代表的なDaaSであるAWSのWorkspacesとAzureのAVD。
