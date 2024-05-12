@@ -39,114 +39,114 @@ Workspacesの構築から。
 ### 1.Directory Service設定
 Workspacesで使うディレクトリをセットアップする。  
 ここではAD Connectorにする。  
-![AD Connector](../images/workspaces-saml2/workspaces01.png)
+![AD Connector](/images/workspaces-saml2/workspaces01.png)
 
 サイズは当然スモール。  
-![small](../images/workspaces-saml2/workspaces02.png)
+![small](/images/workspaces-saml2/workspaces02.png)
 
 設置先のVPC、サブネットを設定。  
-![vpc](../images/workspaces-saml2/workspaces03.png)
+![vpc](/images/workspaces-saml2/workspaces03.png)
 
 ADサーバへの接続情報を入力。  
-![connectad](../images/workspaces-saml2/workspaces04.png)
+![connectad](/images/workspaces-saml2/workspaces04.png)
 
 作成完了。  
-![active](../images/workspaces-saml2/workspaces05.png)
+![active](/images/workspaces-saml2/workspaces05.png)
 
 ### 2.Workspaces作成
 次にWorkspacesを作成。  
 先ほど作成したディレクトリを登録。  
-![adcon](../images/workspaces-saml2/workspaces06.png)
+![adcon](/images/workspaces-saml2/workspaces06.png)
 
 ユーザー作成は不要。  
-![skipuser](../images/workspaces-saml2/workspaces07.png)
+![skipuser](/images/workspaces-saml2/workspaces07.png)
 
 対象のユーザーを選択。  
-![selectuser](../images/workspaces-saml2/workspaces08.png)
+![selectuser](/images/workspaces-saml2/workspaces08.png)
 
 バンドル(スペック)を選択。  
-![selectbundle](../images/workspaces-saml2/workspaces09.png)
+![selectbundle](/images/workspaces-saml2/workspaces09.png)
 
 OSイメージも選択。  
-![osimage](../images/workspaces-saml2/workspaces10.png)
+![osimage](/images/workspaces-saml2/workspaces10.png)
 
 実行モードを選択。  
-![autostop](../images/workspaces-saml2/workspaces11.png)
+![autostop](/images/workspaces-saml2/workspaces11.png)
 
 必要に応じてカスタマイズ。  
-![customerize](../images/workspaces-saml2/workspaces12.png)
+![customerize](/images/workspaces-saml2/workspaces12.png)
 
 Workspaces作成完了。  
-![finish](../images/workspaces-saml2/workspaces13.png)
+![finish](/images/workspaces-saml2/workspaces13.png)
 
 ### 3.エンタープライズアプリケーション作成、SAML設定
 実質的にここから本題。  
 Entra IDにログインし、SAML2.0用のエンタープライズアプリケーションを作成する。  
 
 [独自アプリケーションの作成]をクリック。  
-![create](../images/workspaces-saml2/entra01.png)
+![create](/images/workspaces-saml2/entra01.png)
 
 任意の名前を入力して、アプリ作成。  
-![create apps](../images/workspaces-saml2/entra02.png)
+![create apps](/images/workspaces-saml2/entra02.png)
 
 [シングルサインオンの設定 - 作業の開始]をクリック。  
-![sso-saml](../images/workspaces-saml2/entra03.png)
+![sso-saml](/images/workspaces-saml2/entra03.png)
 
 [SAML]をクリック。  
-![saml](../images/workspaces-saml2/entra04.png)
+![saml](/images/workspaces-saml2/entra04.png)
 
 AWSが提供されているWorkspacesのSAMLメタデータを保存。  
 https://signin.aws.amazon.com/static/saml-metadata.xml
 
 DLしたSAMLメタデータをアップロードする。  
-![upload-saml](../images/workspaces-saml2/entra05.png)
+![upload-saml](/images/workspaces-saml2/entra05.png)
 
 [保存]をクリック。  
-![save](../images/workspaces-saml2/entra06.png)
+![save](/images/workspaces-saml2/entra06.png)
 
 [フェデレーションメタデータXML]をダウンロードする。  
-![federation](../images/workspaces-saml2/entra07.png)
+![federation](/images/workspaces-saml2/entra07.png)
 
 ### 4.IAM Identity Provider作成
 AWSのIAMコンソールに移動。  
 [IDプロバイダ]をクリック。  
-![IAM](../images/workspaces-saml2/workspaces20.png)
+![IAM](/images/workspaces-saml2/workspaces20.png)
 
 [プロバイダを追加]をクリック。  
-![add provider](../images/workspaces-saml2/workspaces21.png)
+![add provider](/images/workspaces-saml2/workspaces21.png)
 
 任意のプロバイダ名を入力し、先ほどDLしたフェデレーションメタデータXMLファイルをアップロードする。  
-![id provider](../images/workspaces-saml2/workspaces22.png)
+![id provider](/images/workspaces-saml2/workspaces22.png)
 
 IDプロバイダを作成できたので、[ロールの割り当て]をクリック。  
-![attache role](../images/workspaces-saml2/workspaces23.png)
+![attache role](/images/workspaces-saml2/workspaces23.png)
 
 ### 5.IAMロール作成
 [新しいロールを作成]を選択して[次へ]をクリック。  
-![create iam role](../images/workspaces-saml2/workspaces24.png)
+![create iam role](/images/workspaces-saml2/workspaces24.png)
 
 信頼されたエンティティタイプ等はそのまま。  
-![entity](../images/workspaces-saml2/workspaces25.png)
+![entity](/images/workspaces-saml2/workspaces25.png)
 
 属性:**SAML:sub_type**  
 値:**persistent**  
 をそれぞれ設定する。  
-![persistent](../images/workspaces-saml2/workspaces26.png)
+![persistent](/images/workspaces-saml2/workspaces26.png)
 
 許可ポリシーは未設定のまま次へ。  
-![policy](../images/workspaces-saml2/workspaces27.png)
+![policy](/images/workspaces-saml2/workspaces27.png)
 
 任意のロール名を入力して、IAMロール作成。  
-![iamrole](../images/workspaces-saml2/workspaces28.png)
+![iamrole](/images/workspaces-saml2/workspaces28.png)
 
 作成したIAMロールを開き、[信頼関係]タブをクリックして、[信頼ポリシーを編集]をクリック。  
-![trust policy](../images/workspaces-saml2/workspaces29.png)
+![trust policy](/images/workspaces-saml2/workspaces29.png)
 
 Actionに**"sts:TagSession"**を追記する。  
-![tagsession](../images/workspaces-saml2/workspaces30.png)
+![tagsession](/images/workspaces-saml2/workspaces30.png)
 
 次にインラインポリシーを作成する。  
-![inlinepolicy](../images/workspaces-saml2/workspaces31.png)
+![inlinepolicy](/images/workspaces-saml2/workspaces31.png)
 
 次のポリシーを入力する。  
 自分の環境に合わせて書き換える。  
@@ -170,17 +170,17 @@ Actionに**"sts:TagSession"**を追記する。
     ]
 }
 ```
-![json](../images/workspaces-saml2/workspaces32.png)
+![json](/images/workspaces-saml2/workspaces32.png)
 
 任意のポリシー名を入力して、ポリシー作成。  
-![policyname](../images/workspaces-saml2/workspaces33.png)
+![policyname](/images/workspaces-saml2/workspaces33.png)
 
 ### 6.SAML認証応答のアサーション設定
 再びEntra IDに戻って、属性とクレームを編集する。  
-![claim](../images/workspaces-saml2/entra10.png)
+![claim](/images/workspaces-saml2/entra10.png)
 
 デフォルトで設定されている4つの項目を削除する。  
-![delete](../images/workspaces-saml2/entra11.png)
+![delete](/images/workspaces-saml2/entra11.png)
 
 追加の要求は以下の3つを設定する。  
 | 名前 | 値 |
@@ -195,18 +195,18 @@ arn:aws:iam::111111111111:role/workspaces_saml2.0_role,arn:aws:iam::111111111111
 ```
 
 追加の要求の入力が終わったら、必要な要求のクレームをクリックする。  
-![claim](../images/workspaces-saml2/entra12.png)
+![claim](/images/workspaces-saml2/entra12.png)
 
 名前識別子の形式を[永続的]に変更する。  
-![persistent](../images/workspaces-saml2/entra13.png)
+![persistent](/images/workspaces-saml2/entra13.png)
 
 最後にユーザーを追加する。  
 ここに登録したユーザーがSAMLログイン可能になる。  
-![user](../images/workspaces-saml2/entra16.png)
+![user](/images/workspaces-saml2/entra16.png)
 
 ### 7.フェデレーションのリレーステート設定
 続けて、[基本的なSAML構成]を編集する。  
-![relaystate](../images/workspaces-saml2/entra14.png)
+![relaystate](/images/workspaces-saml2/entra14.png)
 
 リレー状態を入力する。  
 ```
@@ -215,14 +215,14 @@ https://workspaces.euc-sso.ap-northeast-1.aws.amazon.com/sso-idp?registrationCod
 "regitration-code"はWorkspacesの登録コード。  
 
 こんな感じ。  
-![relay](../images/workspaces-saml2/entra15.png)
+![relay](/images/workspaces-saml2/entra15.png)
 
 ### 8.Entra IDアプリリンクのコピー
 https://myapps.microsoft.com/
 にアクセス。
 
 先ほど作成したエンタープライズアプリケーションが表示されているので、[リンクのコピー]をクリックする。  
-![myapps](../images/workspaces-saml2/entra17.png)
+![myapps](/images/workspaces-saml2/entra17.png)
 
 こんなURLがコピーされるので、  
 ```
@@ -240,34 +240,34 @@ https://myapps.microsoft.com/signin/cc6f9bde-441c-4890-9772-XXXXXX?tenantId=0779
 ### 9.WorkspacesのSAML2.0設定
 最後の設定。  
 Workspacesのディレクトリをクリック。  
-![directory](../images/workspaces-saml2/workspaces40.png)
+![directory](/images/workspaces-saml2/workspaces40.png)
 
 [認証を編集]をクリック。  
-![edit](../images/workspaces-saml2/workspaces41.png)
+![edit](/images/workspaces-saml2/workspaces41.png)
 
 [SAML2.0アイデンティティプロバイダーの編集]をクリック。  
-![saml2.0](../images/workspaces-saml2/workspaces42.png)
+![saml2.0](/images/workspaces-saml2/workspaces42.png)
 
 [SAML2.0認証の有効化]にチェックを入れ、  
 [ユーザーアクセスURL]は先ほど確認したURLを入力する。  
-![useraccess](../images/workspaces-saml2/workspaces43.png)
+![useraccess](/images/workspaces-saml2/workspaces43.png)
 
 以上で設定完了。  
-![finish](../images/workspaces-saml2/workspaces44.png)
+![finish](/images/workspaces-saml2/workspaces44.png)
 
 ### 10.動作確認
 早速動作確認を行なってみる。  
 Workspacesクライアントで登録コードを入力すると、ログイン画面が以下のようになっている。  
-![workspaces](../images/workspaces-saml2/workspaces45.png)
+![workspaces](/images/workspaces-saml2/workspaces45.png)
 
 サインインボタンをクリックすると、ブラウザが立ち上がり  
 Entra IDのサインインを求められる。  
 ここでMFAの設定を行っておけば、MFAの入力が求められる。  
 サインインが完了すると、Safariの場合は以下のようにアプリに戻るように促される。  
-![workspaces](../images/workspaces-saml2/workspaces46.png)
+![workspaces](/images/workspaces-saml2/workspaces46.png)
 
 その後はWorkspacesにログインするためのID/Passを入力する。  
-![login](../images/workspaces-saml2/workspaces47.png)
+![login](/images/workspaces-saml2/workspaces47.png)
 
 
 ## SAML2.0連携でセキュリティレベル向上
