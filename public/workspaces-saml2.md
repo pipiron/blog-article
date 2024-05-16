@@ -1,12 +1,12 @@
 ---
 title: Amazon WorkspacesをEntraIDでSAML2.0認証
 tags:
-- AWS
-- WorkSpaces
-- EntraID
+  - AWS
+  - workspaces
+  - EntraID
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-05-13T01:36:22+09:00'
+id: d1be3ebdd2683b636c15
 organization_url_name: null
 slide: false
 ignorePublish: false
